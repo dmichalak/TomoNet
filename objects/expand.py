@@ -28,7 +28,7 @@ class Expand:
         cmd = "cd {}; createAlignedModel *prm {} {}".format(self.target_cache_folder, self.peet_iter, self.threshold_CCC)
         subprocess.run(cmd,shell=True, stdout=subprocess.PIPE)
         mkfolder("{}/exp".format(self.target_cache_folder))
-        prefix = os.path.basename(self.tomo.modPath).split(".")[0]
+        prefix = os.path.basename(self.tomo.modPath).split(".mrc")[0]
 
         ########################### mrc, mod. MOTL files #########################
         if os.path.exists("{}/{}_Tom1_Iter{}.mod".format(self.target_cache_folder, prefix, self.peet_iter)):

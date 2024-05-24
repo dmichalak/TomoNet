@@ -1317,11 +1317,11 @@ class Expand(QTabWidget):
         return params
     
     def get_tomo_list(self, folder):
-        tomoName_mod = set([ os.path.basename(x).split(".")[0] for x in glob.glob("{}/*.mod".format(folder))])
+        tomoName_mod = set([ os.path.basename(x).split(".mod")[0] for x in glob.glob("{}/*.mod".format(folder))])
         rec_files = set(glob.glob("{}/*.rec".format(folder)))
         tomo_files = set(glob.glob("{}/*.mrc".format(folder)))
         tomo_files.update(rec_files)
-        tomoName_tomo = set([ os.path.basename(x).split(".")[0] for x in list(tomo_files)])
+        tomoName_tomo = set([ os.path.basename(x).split(".mrc")[0] for x in list(tomo_files)])
 
         intersection_tomoName = sorted(list(tomoName_mod.intersection(tomoName_tomo)))
 

@@ -188,9 +188,9 @@ class Manual(QTabWidget):
     def read_tomo(self):
         searchPath = "{}".format(self.lineEdit_path_other_maps.text())
 
-        tomoNames_rec = [os.path.basename(x).split(".")[0] \
+        tomoNames_rec = [os.path.basename(x).split(".rec")[0] \
             for x in sorted(glob.glob("{}/*.rec".format(searchPath)))]
-        tomoNames_mrc = [os.path.basename(x).split(".")[0] \
+        tomoNames_mrc = [os.path.basename(x).split(".mrc")[0] \
             for x in sorted(glob.glob("{}/*.mrc".format(searchPath)))]
 
         tomoNames = []
